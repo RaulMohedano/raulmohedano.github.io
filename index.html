@@ -3,73 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Digital Portfolio</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Personal Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        const translations = {
+            en: {
+                about: "About Me",
+                education: "Education",
+                competences: "Digital Competences",
+                teaching: "Teaching Experience",
+                research: "Research",
+                publications: "Publications"
+            },
+            es: {
+                about: "Sobre Mí",
+                education: "Educación",
+                competences: "Competencias Digitales",
+                teaching: "Experiencia Docente",
+                research: "Investigación",
+                publications: "Publicaciones"
+            }
+        };
+
+        function changeLanguage(lang) {
+            document.getElementById("nav-about").textContent = translations[lang].about;
+            document.getElementById("nav-education").textContent = translations[lang].education;
+            document.getElementById("nav-competences").textContent = translations[lang].competences;
+            document.getElementById("nav-teaching").textContent = translations[lang].teaching;
+            document.getElementById("nav-research").textContent = translations[lang].research;
+            document.getElementById("nav-publications").textContent = translations[lang].publications;
+        }
+    </script>
 </head>
 <body>
+    <div class="top-bar">
+        <nav>
+            <ul>
+                <li><a href="#about" id="nav-about">About Me</a></li>
+                <li><a href="#education" id="nav-education">Education</a></li>
+                <li><a href="#competences" id="nav-competences">Digital Competences</a></li>
+                <li><a href="#teaching" id="nav-teaching">Teaching Experience</a></li>
+                <li><a href="#research" id="nav-research">Research</a></li>
+                <li><a href="#publications" id="nav-publications">Publications</a></li>
+            </ul>
+        </nav>
+        <select class="language-selector" onchange="changeLanguage(this.value)">
+            <option value="en" selected>EN</option>
+            <option value="es">ES</option>
+        </select>
+    </div>
     <header>
-        <div class="container">
-            <h1>My Digital Portfolio</h1>
-            <nav>
-                <ul>
-                    <li><a href="#about">About Me</a></li>
-                    <li><a href="#education">Education</a></li>
-                    <li><a href="#skills">Digital Competences</a></li>
-                    <li><a href="#teaching">Teaching Experience</a></li>
-                    <li><a href="#research">Research</a></li>
-                    <li><a href="#publications">Publications</a></li>
-                </ul>
-            </nav>
-        </div>
+        <h1>My Digital Portfolio</h1>
     </header>
-
-    <section id="about" class="section">
-        <div class="container">
-            <h2>About Me</h2>
-            <p>Welcome! I am [Your Name], passionate about [personal interests]. This portfolio showcases my journey, skills, and experiences.</p>
-        </div>
+    <section class="hero">
+        <h2>Welcome to My Portfolio</h2>
+        <button>Start Your Journey</button>
     </section>
-
-    <section id="education" class="section">
-        <div class="container">
-            <h2>Educational Background</h2>
-            <p>[Your academic background details]</p>
-        </div>
-    </section>
-
-    <section id="skills" class="section">
-        <div class="container">
-            <h2>Digital Competences</h2>
-            <p>[List of digital skills and competencies]</p>
-        </div>
-    </section>
-
-    <section id="teaching" class="section">
-        <div class="container">
-            <h2>Teaching Experience</h2>
-            <p>[Your teaching experience and skills]</p>
-        </div>
-    </section>
-
-    <section id="research" class="section">
-        <div class="container">
-            <h2>Research</h2>
-            <p>[Your research interests and projects]</p>
-        </div>
-    </section>
-
-    <section id="publications" class="section">
-        <div class="container">
-            <h2>Publications</h2>
-            <p>[Your published works]</p>
-        </div>
-    </section>
-
+    <div class="placeholder"></div>
     <footer>
-        <div class="container">
-            <p>&copy; 2025 [Your Name]. All Rights Reserved.</p>
-        </div>
+        <p>&copy; 2025 My Portfolio</p>
     </footer>
 </body>
 </html>
