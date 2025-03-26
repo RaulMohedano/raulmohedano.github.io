@@ -16,7 +16,7 @@ body {
 .top-bar {
     position: fixed;
     top: 0;
-    width: 100%;
+    width: 90%;
     background: #121212;
     color: white;
     display: flex;
