@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Portfolio</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="styles.css">
     <script>
         const translations = {
             en: {
@@ -32,6 +32,9 @@
             document.getElementById("nav-teaching").textContent = translations[lang].teaching;
             document.getElementById("nav-research").textContent = translations[lang].research;
             document.getElementById("nav-publications").textContent = translations[lang].publications;
+
+            document.getElementById("lang-en").style.fontWeight = lang === "en" ? "bold" : "normal";
+            document.getElementById("lang-es").style.fontWeight = lang === "es" ? "bold" : "normal";
         }
     </script>
 </head>
@@ -47,10 +50,10 @@
                 <li><a href="#publications" id="nav-publications">Publications</a></li>
             </ul>
         </nav>
-        <select class="language-selector" onchange="changeLanguage(this.value)">
-            <option value="en" selected>EN</option>
-            <option value="es">ES</option>
-        </select>
+        <div class="language-selector">
+            <span id="lang-en" onclick="changeLanguage('en')" style="cursor: pointer; font-weight: bold;">EN</span> /
+            <span id="lang-es" onclick="changeLanguage('es')" style="cursor: pointer;">ES</span>
+        </div>
     </div>
     <header>
         <h1>My Digital Portfolio</h1>
