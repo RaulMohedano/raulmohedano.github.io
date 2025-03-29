@@ -18,6 +18,7 @@
     padding: 20px;
     font-size: 0.9rem;
     z-index: 1002; /* Ensure it is above the top bar */
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5); /* Add shadow */
 }
 
 .left-bar .profile {
@@ -69,7 +70,7 @@
 
 .left-bar nav ul li a:hover,
 .left-bar nav ul li a.active {
-    color: orange;
+    color: #ff7833; /* Darker orange */
 }
 
 .language-selector {
@@ -83,8 +84,12 @@
     padding: 5px;
 }
 
+.language-selector span {
+    color: white; /* Default color for inactive state */
+}
+
 .language-selector span.active {
-    color: orange;
+    color: #ff7833; /* Darker orange for active state */
 }
 
 /* Set the default font to HelveticaNeue for the entire body */
@@ -102,7 +107,7 @@ header, .hero, .placeholder, .section, footer {
 /* Top Bar */
 .top-bar {
     width: calc(100% - 225px); /* Full width minus the left bar width */
-    background-color: orange; /* Same orange as the left bar selections */
+    background-color: #ff7833; /* Darker orange */
     color: white;
     text-align: center;
     padding: 10px 0;
@@ -110,10 +115,34 @@ header, .hero, .placeholder, .section, footer {
     top: 0;
     left: 225px; /* Position to the right of the left bar */
     z-index: 1001; /* Ensure it is below the left bar */
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5); /* Add shadow */
 }
 
 .top-bar h1 {
     font-size: 2.8rem;
     font-weight: bold;
     margin: 0;
+}
+
+/* Content Boxes */
+.content-box {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5); /* Same shadow as bars */
+    padding: 20px;
+    margin: 20px 1cm; /* Add 1cm margin to each side */
+}
+
+/* Transition effect for page change */
+.page-transition {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 100%;
+    transition: left 0.5s ease-in-out;
+}
+
+.page-transition.active {
+    left: 0;
 }
