@@ -1,5 +1,6 @@
 :root {
     --active-color: #ff7833;
+    --box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
 }
 
 /* Set the default font to HelveticaNeue for the left-bar */
@@ -22,6 +23,7 @@
     padding: 20px;
     font-size: 0.9rem;
     z-index: 1002; /* Ensure it is above the top bar */
+    box-shadow: var(--box-shadow); /* Use the CSS variable */
 }
 
 .left-bar .profile {
@@ -114,10 +116,20 @@ header, .hero, .placeholder, .section, footer {
     top: 0;
     left: 225px; /* Position to the right of the left bar */
     z-index: 1001; /* Ensure it is below the left bar */
+    box-shadow: var(--box-shadow); /* Use the CSS variable */
 }
 
 .top-bar h1 {
     font-size: 2.8rem;
     font-weight: bold;
     margin: 0;
+}
+
+/* Content Boxes */
+.content-box {
+    background: white;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow); /* Same shadow as bars */
+    padding: 20px;
+    margin: 20px 1cm; /* Add 1cm margin to each side */
 }
