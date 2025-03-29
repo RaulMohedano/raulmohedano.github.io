@@ -36,9 +36,6 @@ function changeLanguage(lang) {
     document.getElementById("nav-publications").textContent = translations[lang].publications;
     document.getElementById("nav-contact").textContent = translations[lang].contact;
     document.getElementById("profile-message").textContent = translations[lang].profileMessage;
-    // document.getElementById("box-interests").textContent = translations[lang].interests;
-    // document.getElementById("box-background").textContent = translations[lang].background;
-    // document.getElementById("box-research").textContent = translations[lang].currentResearch;
 
     const currentPath = window.location.pathname.split("/").pop();
     const pageTitleMap = {
@@ -52,29 +49,26 @@ function changeLanguage(lang) {
     };
     document.getElementById("page-title").textContent = pageTitleMap[currentPath] || translations[lang].about;
 
+    const elements = document.querySelectorAll('[data-en], [data-es]');
+    elements.forEach(el => {
+        el.innerHTML = el.getAttribute(`data-${lang}`);
+    });
+
     document.getElementById("lang-en").classList.toggle('active', lang === "en");
     document.getElementById("lang-es").classList.toggle('active', lang === "es");
 
     localStorage.setItem('selectedLanguage', lang);
 }
 
-function loadPageWithTransition(url) {
-    const body = document.querySelector('body');
-    const newPage = document.createElement('div');
-    newPage.classList.add('page-transition');
-    body.appendChild(newPage);
-
+function loadPage(url) {
     fetch(url)
         .then(response => response.text())
         .then(data => {
-            newPage.innerHTML = data;
-            setTimeout(() => {
-                newPage.classList.add('active');
-                setTimeout(() => {
-                    body.innerHTML = newPage.innerHTML;
-                    includeHTML();
-                }, 500); // Match the transition duration
-            }, 10); // Small delay to trigger the transition
+            document.body.innerHTML = data;
+            includeHTML();
+            const savedLanguage = localStorage.getItem('selectedLanguage') || 'en';
+            changeLanguage(savedLanguage);
+            highlightCurrentSection();
         });
 }
 
@@ -85,7 +79,7 @@ function highlightCurrentSection() {
         item.addEventListener('click', function(event) {
             event.preventDefault();
             const url = item.getAttribute('href');
-            loadPageWithTransition(url);
+            loadPage(url);
             history.pushState(null, '', url);
         });
 
