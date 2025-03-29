@@ -1,3 +1,7 @@
+:root {
+    --active-color: #ff7833;
+}
+
 /* Set the default font to HelveticaNeue for the left-bar */
 .left-bar, .left-bar nav ul li a, .language-selector {
     font-family: 'HelveticaNeue', sans-serif;
@@ -69,7 +73,7 @@
 
 .left-bar nav ul li a:hover,
 .left-bar nav ul li a.active {
-    color: orange;
+    color: var(--active-color); /* Use the CSS variable */
 }
 
 .language-selector {
@@ -84,7 +88,7 @@
 }
 
 .language-selector span.active {
-    color: orange;
+    color: var(--active-color); /* Use the CSS variable */
 }
 
 /* Set the default font to HelveticaNeue for the entire body */
@@ -102,7 +106,7 @@ header, .hero, .placeholder, .section, footer {
 /* Top Bar */
 .top-bar {
     width: calc(100% - 225px); /* Full width minus the left bar width */
-    background-color: orange; /* Same orange as the left bar selections */
+    background-color: var(--active-color); /* Use the CSS variable */
     color: white;
     text-align: center;
     padding: 10px 0;
