@@ -36,9 +36,9 @@ function changeLanguage(lang) {
     document.getElementById("nav-publications").textContent = translations[lang].publications;
     document.getElementById("nav-contact").textContent = translations[lang].contact;
     document.getElementById("profile-message").textContent = translations[lang].profileMessage;
-    document.getElementById("box-interests").textContent = translations[lang].interests;
-    document.getElementById("box-background").textContent = translations[lang].background;
-    document.getElementById("box-research").textContent = translations[lang].currentResearch;
+    // document.getElementById("box-interests").textContent = translations[lang].interests;
+    // document.getElementById("box-background").textContent = translations[lang].background;
+    // document.getElementById("box-research").textContent = translations[lang].currentResearch;
 
     const currentPath = window.location.pathname.split("/").pop();
     const pageTitleMap = {
