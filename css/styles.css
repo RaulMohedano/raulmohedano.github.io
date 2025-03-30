@@ -125,12 +125,40 @@ header, .hero, .placeholder, .section, footer {
     margin: 0;
 }
 
+/* Adaptive content row */
+.adaptive-content-row {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align items to the start */
+    margin: 60px 10px; /* Add vertical margin between rows */
+    width: 80vw; /* Set the width of the content row */
+    height: auto; /* Allow height to be adaptive */
+    clear: both; /* Ensure one row starts after the other */
+}
+
+/* Adaptive content box */
+.adaptive-content-box {
+    background: white;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow); /* Use the CSS variable */
+    padding: 20px; /* Ensure equal padding on all sides */
+    width: 80%; /* Set the width to 80% of the content row */
+    margin-left: 1vw; /* Add space between the box and the image placeholder */
+    margin-right: 1vw; /* Add space between the box and the image placeholder */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: auto; /* Allow height to be adaptive */
+}
+
 /* Content Rows */
 .content-row {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 30px 10px; /* Add vertical margin between rows */
+    margin: 60px 10px; /* Add vertical margin between rows */
+    height: 15vw; /* Set the height of the content row */
+    width: 80vw; /* Set the height of the content row */
 }
 
 /* Content Boxes */
@@ -139,10 +167,10 @@ header, .hero, .placeholder, .section, footer {
     border-radius: 10px;
     box-shadow: var(--box-shadow); /* Use the CSS variable */
     padding: 20px; /* Ensure equal padding on all sides */
-    width: 60vw; /* Set the width to 60% of the body width */
-    height: 15vw; /* Set the height to 15% of the body width */
-    margin-right: 1vw; /* Add space between the box and the image placeholder */
+    width: 80%; /* Set the width to 80% of the content row */
+    height: 100%; /* Set the height to 100% of the content row */
     margin-left: 1vw; /* Add space between the box and the image placeholder */
+    margin-right: 1vw; /* Add space between the box and the image placeholder */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -153,6 +181,16 @@ header, .hero, .placeholder, .section, footer {
     font-weight: bold;
     font-size: 2.0rem;
     margin-bottom: 0; /* Remove bottom margin */
+}
+
+.legend {
+    color: black;
+    font-weight: bold;
+    font-size: 0.8rem;
+    flex-grow: 1;
+    display: flex;
+    align-items: center; /* Center the text vertically */
+    margin-top: 5px; /* Set top margin to 5px */
 }
 
 .text {
@@ -171,10 +209,35 @@ header, .hero, .placeholder, .section, footer {
     text-decoration: none;
 }
 
+.publication-list {
+    list-style-type: none;
+    padding: 10;
+}
+
+.publication-list li {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.publication-list a {
+    color: var(--active-color);
+    text-decoration: none;
+}
+
+.publication-list .metrics {
+    position: absolute;
+    right: 0;
+    top: 75%; /* Position below the line */
+    text-align: right;
+    font-size: 0.8rem;
+    color: gray;
+    margin-top: 5px; /* Add extra vertical space */
+}
+
 /* Image Placeholders */
 .image-placeholder {
-    width: 15vw; /* Set the width to 20% of the body width */
-    height: 15vw; /* Set the height to 20% of the body width */
+    width: 18%; /* Set the width to 20% of the content row */
+    height: 100%; /* Set the height to 100% of the content row */
     box-shadow: var(--box-shadow); /* Use the CSS variable */
     display: flex;
     align-items: center; /* Center the image vertically */
