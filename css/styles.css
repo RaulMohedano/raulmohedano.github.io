@@ -78,6 +78,33 @@
     color: var(--active-color); /* Use the CSS variable */
 }
 
+.social-icons {
+    display: flex;
+    justify-content: space-around;
+    margin: 10px 0;
+}
+
+.social-icons a {
+    text-decoration: none;
+}
+
+.social-icons img {
+    width: 24px;
+    height: 24px;
+}
+
+.social-icons a[title]:hover::after {
+    content: attr(title);
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    top: 30px;
+    white-space: nowrap;
+    z-index: 10;
+}
+
 .language-selector {
     margin-top: auto;
     margin-bottom: 20px; /* Ensure it is visible */
