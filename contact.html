@@ -6,13 +6,74 @@
     <title>Raul Mohedano - Contact</title>
     <link rel="stylesheet" href="css/styles.css">
     <script src="actions_and_translations.js"></script>
+    <style>
+        .contact-info {
+            display: flex;
+            justify-content: space-between;
+        }
+        .contact-column {
+            width: 48%;
+        }
+        .contact-column ul {
+            list-style: none;
+            padding: 0 0 0 20px; /* Add left padding to indent the bullets */
+        }
+        .contact-column li {
+            margin-bottom: 10px;
+        }
+        .contact-column img {
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+            margin-right: 8px;
+            filter: invert(100%);
+        }
+    </style>
 </head>
 <body>
     <div data-include-html="bars_and_frames.html"></div>
     <div class="content-row">
         <div class="content-box">
             <h3 class="subtitle" data-en="Contact Information" data-es="Información de Contacto">Contact Information</h3>
-            <p class="text" data-en="You can reach me at raul.mohedano@csic.es" data-es="Puedes contactarme en raul.mohedano@csic.es"></p>
+            <p class="text"
+               data-en="If you want to know more about my research or you are interested in addressing a scientific
+               collaboration you can contact me in any of the following means:"
+               data-es="Puedes contactarme en raul.mohedano@csic.es"
+            ></p>
+            <div class="contact-info">
+                <div class="contact-column">
+                    <h4 data-en="Preferably by email:" data-es="Preferiblemente por correo electrónico:">Preferably by email:</h4>
+                    <ul>
+                        <li><strong>raul.mohedano@csic.es</strong></li>
+                    </ul>
+                </div>
+                <div class="contact-column">
+                    <h4 data-en="But also in:" data-es="Pero también en:">But also in:</h4>
+                    <ul>
+                        <li>
+                            <a href="https://www.linkedin.com/in/ra%C3%BAl-mohedano-91396741/" target="_blank" class="icon-linkedin" title="LinkedIn">
+                                <img src="assets/icons/linkedin.png" alt="LinkedIn">
+                            </a>
+                            LinkedIn
+                        </li>
+                        <li>
+                            <a href="https://github.com/RaulMohedano" target="_blank" class="icon-github" title="GitHub">
+                                <img src="assets/icons/github.png" alt="GitHub">
+                            </a>
+                            GitHub
+                        </li>
+                        <li>
+                            <a href="https://scholar.google.es/citations?user=%22Raul%20Mohedano%22&user=OFD4tMIAAAAJ" target="_blank" class="icon-scholar" title="Google Scholar">
+                                <img src="assets/icons/scholar.png" alt="Google Scholar">
+                            </a>
+                            Google Scholar
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="image-placeholder">
+            <img src="assets/images/with_coffee_square.png" alt="Placeholder 1">
         </div>
     </div>
     <footer>

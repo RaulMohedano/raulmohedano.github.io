@@ -1,6 +1,16 @@
 :root {
     --active-color: #ff7833;
     --box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+    --subtitle-max-size: 2.0rem; /* Current font size for .subtitle */
+    --subtitle-min-size: 0.67rem;
+    --text-max-size: 1.2rem; /* Current font size for .text */
+    --text-min-size: 0.4rem;
+    --highlight-max-size: 1.2rem; /* Current font size for .highlight */
+    --highlight-min-size: 0.4rem;
+    --top-bar-title-max-size: 2.5rem; /* Current font size for .top-bar h1 */
+    --top-bar-title-min-size: 0.93rem;
+    --max-width: 1200px; /* Maximum window width */
+    --min-width: 600px; /* Minimum window width */
 }
 
 /* Set the default font to HelveticaNeue for the left-bar */
@@ -126,6 +136,7 @@ body {
     margin-left: 282.8px; /* Adjust margin to ensure content is not occluded by the left bar */
     padding-top: 60px; /* Adjust padding to account for the fixed top bar */
     overflow-x: hidden; /* Prevent horizontal overflow */
+    min-width: var(--min-width); /* Set a minimum width to prevent content from collapsing */
 }
 
 header, .hero, .placeholder, .section, footer {
@@ -147,7 +158,7 @@ header, .hero, .placeholder, .section, footer {
 }
 
 .top-bar h1 {
-    font-size: 2.8rem;
+    font-size: var(--top-bar-title-max-size); /* Use the variable */
     font-weight: bold;
     margin: 0;
 }
@@ -169,7 +180,7 @@ header, .hero, .placeholder, .section, footer {
     border-radius: 10px;
     box-shadow: var(--box-shadow); /* Use the CSS variable */
     padding: 20px; /* Ensure equal padding on all sides */
-    width: 80%; /* Set the width to 80% of the content row */
+    width: 78%; /* Set the width to 80% of the content row */
     margin-left: 1vw; /* Add space between the box and the image placeholder */
     margin-right: 1vw; /* Add space between the box and the image placeholder */
     display: flex;
@@ -183,9 +194,9 @@ header, .hero, .placeholder, .section, footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 60px 10px; /* Add vertical margin between rows */
-    height: 15vw; /* Set the height of the content row */
-    width: 80vw; /* Set the height of the content row */
+    margin: 40px 10px; /* Add vertical margin between rows */
+    width: 80vw; /* Set the width of the content row */
+    height: auto; /* Allow height to be adaptive */
 }
 
 /* Content Boxes */
@@ -206,7 +217,7 @@ header, .hero, .placeholder, .section, footer {
 .subtitle {
     color: var(--active-color);
     font-weight: bold;
-    font-size: 2.0rem;
+    font-size: var(--subtitle-max-size); /* Use the variable */
     margin-bottom: 0; /* Remove bottom margin */
 }
 
@@ -223,10 +234,8 @@ header, .hero, .placeholder, .section, footer {
 .text {
     color: black;
     font-weight: normal;
-    font-size: 1.2rem;
-    flex-grow: 1;
-    display: flex;
-    align-items: center; /* Center the text vertically */
+    font-size: var(--text-max-size); /* Use the variable */
+    display: inline; /* Change from flex to inline */
     padding-top: 20px; /* Add top padding to match the box padding */
 }
 
@@ -234,6 +243,7 @@ header, .hero, .placeholder, .section, footer {
     color: var(--active-color);
     font-weight: bold;
     text-decoration: none;
+    font-size: var(--highlight-max-size); /* Use the variable */
 }
 
 .publication-list {
@@ -290,4 +300,25 @@ header, .hero, .placeholder, .section, footer {
 
 .page-transition.active {
     left: 0;
+}
+
+/* Media query for responsive font sizes */
+@media (max-width: var(--max-width)) {
+    .subtitle {
+        font-size: calc(var(--subtitle-max-size) * (100vw - var(--min-width)) / (var(--max-width) - var(--min-width)) + var(--subtitle-min-size) * (1 - (100vw - var(--min-width)) / (var(--max-width) - var(--min-width))));
+    }
+    .text {
+        font-size: calc(var(--text-max-size) * (100vw - var(--min-width)) / (var(--max-width) - var(--min-width)) + var(--text-min-size) * (1 - (100vw - var(--min-width)) / (var(--max-width) - var(--min-width))));
+    }
+    .highlight {
+        font-size: calc(var(--highlight-max-size) * (100vw - var(--min-width)) / (var(--max-width) - var(--min-width)) + var(--highlight-min-size) * (1 - (100vw - var(--min-width)) / (var(--max-width) - var(--min-width))));
+    }
+    .top-bar h1 {
+        font-size: calc(var(--top-bar-title-max-size) * (100vw - var(--min-width)) / (var(--max-width) - var(--min-width)) + var(--top-bar-title-min-size) * (1 - (100vw - var(--min-width)) / (var(--max-width) - var(--min-width))));
+    }
+}
+
+/* Prevent resizing below 600px */
+body {
+    min-width: var(--min-width);
 }
