@@ -1,6 +1,7 @@
 const translations = {
     en: {
         about: "About Me",
+        about_title: "Raul Mohedano. Scientific researcher",
         education: "Education",
         teaching: "Teaching Experience",
         research: "Research",
@@ -13,6 +14,7 @@ const translations = {
     },
     es: {
         about: "Sobre Mí",
+        about_title: "Raul Mohedano. Investigador científico",
         education: "Educación",
         teaching: "Experiencia Docente",
         research: "Investigación",
@@ -37,17 +39,17 @@ function changeLanguage(lang) {
     const currentPath = window.location.pathname.split("/").pop();
 
     const pageTitleMap = {
-    "index.html": "Raul Mohedano. " + translations[lang].profileMessage,
-    "education.html": translations[lang].education,
-    "teaching.html": translations[lang].teaching,
-    "research.html": translations[lang].research,
-    "tracking.html": translations[lang].research,
-    "calibration.html": translations[lang].research,
-    "nmt.html": translations[lang].research,
-    "modifiedrf.html": translations[lang].research,
-    "publications.html": translations[lang].publications,
-    "contact.html": translations[lang].contact
-};
+        "index.html": translations[lang].about_title,
+        "education.html": translations[lang].education,
+        "teaching.html": translations[lang].teaching,
+        "research.html": translations[lang].research,
+        "tracking.html": translations[lang].research,
+        "calibration.html": translations[lang].research,
+        "nmt.html": translations[lang].research,
+        "modifiedrf.html": translations[lang].research,
+        "publications.html": translations[lang].publications,
+        "contact.html": translations[lang].contact
+    };
 
 document.getElementById("page-title").textContent = pageTitleMap[currentPath] || translations[lang].about;
 
