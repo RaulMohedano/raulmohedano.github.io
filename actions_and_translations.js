@@ -2,7 +2,6 @@ const translations = {
     en: {
         about: "About Me",
         education: "Education",
-        competences: "Digital Competences",
         teaching: "Teaching Experience",
         research: "Research",
         publications: "Publications",
@@ -15,7 +14,6 @@ const translations = {
     es: {
         about: "Sobre Mí",
         education: "Educación",
-        competences: "Competencias Digitales",
         teaching: "Experiencia Docente",
         research: "Investigación",
         publications: "Publicaciones",
@@ -30,7 +28,6 @@ const translations = {
 function changeLanguage(lang) {
     document.getElementById("nav-about").textContent = translations[lang].about;
     document.getElementById("nav-education").textContent = translations[lang].education;
-    document.getElementById("nav-competences").textContent = translations[lang].competences;
     document.getElementById("nav-teaching").textContent = translations[lang].teaching;
     document.getElementById("nav-research").textContent = translations[lang].research;
     document.getElementById("nav-publications").textContent = translations[lang].publications;
@@ -42,7 +39,6 @@ function changeLanguage(lang) {
     const pageTitleMap = {
     "index.html": "Raul Mohedano. " + translations[lang].profileMessage,
     "education.html": translations[lang].education,
-    "competences.html": translations[lang].competences,
     "teaching.html": translations[lang].teaching,
     "research.html": translations[lang].research,
     "tracking.html": translations[lang].research,
