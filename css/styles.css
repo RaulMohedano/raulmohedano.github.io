@@ -1,4 +1,6 @@
 :root {
+    --content-margin: 25px; /* Define a new variable for the margin */
+    --project-box-margin: 20px; /* Define a new variable for the margin */
     --active-color: #ff7833;
     --box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
     --subtitle-max-size: 2.0rem; /* Current font size for .subtitle */
@@ -23,7 +25,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 225px;
+    width: 235px;
     height: 100%;
     background: #121212;
     color: white;
@@ -194,7 +196,7 @@ header, .hero, .placeholder, .section, footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 40px 10px; /* Add vertical margin between rows */
+    margin: 40px 20px; /* Add vertical margin between rows */
     width: 80vw; /* Set the width of the content row */
     height: auto; /* Allow height to be adaptive */
 }
@@ -204,7 +206,7 @@ header, .hero, .placeholder, .section, footer {
     background: white;
     border-radius: 10px;
     box-shadow: var(--box-shadow); /* Use the CSS variable */
-    padding: 20px; /* Ensure equal padding on all sides */
+    padding: var(--content-margin); /* Use the new margin variable */
     width: 80%; /* Set the width to 80% of the content row */
     height: 100%; /* Set the height to 100% of the content row */
     margin-left: 1vw; /* Add space between the box and the image placeholder */
@@ -214,11 +216,74 @@ header, .hero, .placeholder, .section, footer {
     justify-content: space-between;
 }
 
+/* Project Rows */
+.project-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: var(--project-box-margin); /* Set the margin for the rest */
+    margin-left: calc(1.5*var(--project-box-margin)); /* Set the margin for the rest */
+    margin-bottom: 0px; /* Set the margin for the rest */
+    width: 80vw; /* Set the width of the content row */
+    height: auto; /* Allow height to be adaptive */
+}
+
+.project-row:first-of-type {
+    margin-top: calc(10 * var(--project-box-margin)); /* Increase the margin for the first appearance */
+}
+
+/* Project Boxes */
+.project-box {
+    background: white;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    padding: var(--content-margin);
+    width: 40vw; /* Set the width to 40% of the window width */
+    height: 300px; /* Allow height to be adaptive */
+    margin: 0px calc(0.5*var(--project-box-margin)); /* Set both vertical and horizontal separation to 3% of the window width */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.project-box img {
+    width: 350px; /* Define the size of the image */
+    height: 220px; /* Make the image approximately square */
+    object-fit: cover;
+    margin: 0;
+}
+
+.project-box:hover {
+    background-color: #2471a3;
+    color: white; /* Change text color to white on hover */
+    cursor: pointer;
+}
+
+.project-box .subtitle {
+    color: var(--active-color);
+    font-weight: bold;
+    font-size: var(--subtitle-max-size);
+    margin-bottom: var(--content-margin);
+    transition: color 0.5s ease; /* Add transition to subtitle color */
+}
+
+.project-box .text {
+    color: black;
+    font-weight: normal;
+    font-size: var(--text-max-size);
+    display: inline;
+    padding-top: var(--content-margin);
+    margin-bottom: 0px;
+    transition: color 0.5s ease, background-color 0.5s ease;
+}
+
 .subtitle {
     color: var(--active-color);
     font-weight: bold;
     font-size: var(--subtitle-max-size); /* Use the variable */
-    margin-bottom: 0; /* Remove bottom margin */
+    margin-top: 0px; /* Use the new margin variable */
+    margin-bottom: calc(-1.0*var(--content-margin)); /* Use the new margin variable */
 }
 
 .legend {
@@ -228,7 +293,8 @@ header, .hero, .placeholder, .section, footer {
     flex-grow: 1;
     display: flex;
     align-items: center; /* Center the text vertically */
-    margin-top: 5px; /* Set top margin to 5px */
+    margin-top: var(--content-margin); /* Use the new margin variable */
+    margin-bottom: 0px; /* Use the new margin variable */
 }
 
 .text {
@@ -236,7 +302,8 @@ header, .hero, .placeholder, .section, footer {
     font-weight: normal;
     font-size: var(--text-max-size); /* Use the variable */
     display: inline; /* Change from flex to inline */
-    padding-top: 20px; /* Add top padding to match the box padding */
+    padding-top: var(--content-margin); /* Use the new margin variable */
+    margin-bottom: 0px; /* Use the new margin variable */
 }
 
 .highlight {
@@ -286,6 +353,29 @@ header, .hero, .placeholder, .section, footer {
     height: 100%;
     object-fit: cover;
     border-radius: 0; /* Ensure squared corners */
+}
+
+/* Row */
+.row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; /* Adjust as needed */
+}
+
+.row .text {
+    flex: 1;
+}
+
+.row .image {
+    flex: 0 0 33%;
+    text-align: center;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.row .image img {
+    max-width: 100%;
+    height: auto;
 }
 
 /* Transition effect for page change */

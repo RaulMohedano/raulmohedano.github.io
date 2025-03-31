@@ -9,26 +9,34 @@
 </head>
 <body>
     <div data-include-html="bars_and_frames.html"></div>
-    <div class="content-row">
-        <div class="image-placeholder">
-            <img src="assets/images/inrf.png" alt="Research Image 1">
+    <div class="project-row"></div>
+    <div class="project-row"></div>
+    <div class="project-row">
+        <div class="project-box" onclick="location.href='tracking.html'">
+            <h3 class="subtitle"
+                data-en="Multi-camera multi-object tracking"
+                data-es="Seguimiento milti-objeto y multi-cámara">Multi-camera multi-object tracking</h3>
+            <img src="assets/images/multi_cam_multi_obj_low.png" alt="Multi-camera multi-object tracking">
         </div>
-        <div class="content-box">
-            <h3 class="subtitle" data-en="Research Title 1" data-es="Título de Investigación 1">Research Title 1</h3>
-            <p class="text" data-en="Description of research 1" data-es="Descripción de investigación 1"></p>
+        <div class="project-box" onclick="location.href='calibration.html'">
+            <h3 class="subtitle" data-en="Camera calibration and localization" data-es="Calibración y localización de cámaras">Camera calibration and localization</h3>
+            <img src="assets/images/camera_localization_low.png" alt="Camera calibration and localization">
         </div>
     </div>
-    <div class="content-row">
-        <div class="image-placeholder">
-            <img src="assets/images/research_image2.png" alt="Research Image 2">
+    <div class="project-row">
+        <div class="project-box" onclick="location.href='nmt.html'">
+            <h3 class="subtitle"
+                data-en="Neural machine translation"
+                data-es="Traducción automática neuronal">Neural machine translation</h3>
+            <img src="assets/images/nmt_general_low.png" alt="Neural machine translation">
         </div>
-        <div class="content-box">
-            <h3 class="subtitle" data-en="Research Title 2" data-es="Título de Investigación 2">Research Title 2</h3>
-            <p class="text" data-en="Description of research 2" data-es="Descripción de investigación 2"></p>
+        <div class="project-box" onclick="location.href='modifiedrf.html'">
+            <h3 class="subtitle" data-en="Biologically-inspired AI (*)" data-es="IA inspirada en neuronas biológicas (*)">Biologically-inspired mechanisms for reliable AI</h3>
+            <img src="assets/images/inrf_cover.png" alt="Biologically-inspired, efficient and reliable AI">
         </div>
     </div>
     <footer>
-        <p>Updated: 29-03-2025</p>
+        <p data-en="(*) Current<br>Updated: 29-03-2025" data-es="(*) Actual<br>Updated: 29-03-2025"></p>
     </footer>
 </body>
 </html>

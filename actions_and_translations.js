@@ -38,16 +38,22 @@ function changeLanguage(lang) {
     document.getElementById("profile-message").textContent = translations[lang].profileMessage;
 
     const currentPath = window.location.pathname.split("/").pop();
+
     const pageTitleMap = {
-        "index.html": "Raul Mohedano. " + translations[lang].profileMessage,
-        "education.html": translations[lang].education,
-        "competences.html": translations[lang].competences,
-        "teaching.html": translations[lang].teaching,
-        "research.html": translations[lang].research,
-        "publications.html": translations[lang].publications,
-        "contact.html": translations[lang].contact
-    };
-    document.getElementById("page-title").textContent = pageTitleMap[currentPath] || translations[lang].about;
+    "index.html": "Raul Mohedano. " + translations[lang].profileMessage,
+    "education.html": translations[lang].education,
+    "competences.html": translations[lang].competences,
+    "teaching.html": translations[lang].teaching,
+    "research.html": translations[lang].research,
+    "tracking.html": translations[lang].research,
+    "calibration.html": translations[lang].research,
+    "nmt.html": translations[lang].research,
+    "modifiedrf.html": translations[lang].research,
+    "publications.html": translations[lang].publications,
+    "contact.html": translations[lang].contact
+};
+
+document.getElementById("page-title").textContent = pageTitleMap[currentPath] || translations[lang].about;
 
     const elements = document.querySelectorAll('[data-en], [data-es]');
     elements.forEach(el => {
@@ -83,7 +89,11 @@ function highlightCurrentSection() {
             history.pushState(null, '', url);
         });
 
-        if (item.getAttribute("href") === currentPath) {
+        if (item.getAttribute("href") === currentPath ||
+            (currentPath === "nmt.html" && item.getAttribute("href") === "research.html") ||
+            (currentPath === "tracking.html" && item.getAttribute("href") === "research.html") ||
+            (currentPath === "modifiedrf.html" && item.getAttribute("href") === "research.html") ||
+            (currentPath === "calibration.html" && item.getAttribute("href") === "research.html")) {
             item.classList.add('active');
         } else {
             item.classList.remove('active');
