@@ -11,8 +11,8 @@
     --highlight-min-size: 0.4rem;
     --top-bar-title-max-size: 2.5rem; /* Current font size for .top-bar h1 */
     --top-bar-title-min-size: 0.93rem;
-    --max-width: 1200px; /* Maximum window width */
-    --min-width: 600px; /* Minimum window width */
+    --max-width: 1400px; /* Maximum window width */
+    --min-width: 800px; /* Minimum window width */
 }
 
 /* Set the default font to HelveticaNeue for the left-bar */
@@ -406,9 +406,4 @@ header, .hero, .placeholder, .section, footer {
     .top-bar h1 {
         font-size: calc(var(--top-bar-title-max-size) * (100vw - var(--min-width)) / (var(--max-width) - var(--min-width)) + var(--top-bar-title-min-size) * (1 - (100vw - var(--min-width)) / (var(--max-width) - var(--min-width))));
     }
-}
-
-/* Prevent resizing below 600px */
-body {
-    min-width: var(--min-width);
 }
